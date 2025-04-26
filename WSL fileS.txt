@@ -1,0 +1,104 @@
+############################## Enable UVC Camera Support in WSL Kernel ################################
+
+#https://www.youtube.com/watch?v=t_YnACEPmrM&ab_channel=AgileDevArt
+#https://zenn.dev/pinto0309/articles/e1432253d29e30
+#https://github.com/PINTO0309/wsl2_linux_kernel_usbcam_enable_conf
+#https://olof-astrand.medium.com/compiling-your-own-wsl2-kernel-4428d5258578
+#https://gist.github.com/tatumroaquin/b51d16be877d66de9bd3c1bac94faec9
+#https://github.com/dorssel/usbipd-win/wiki/WSL-support
+#https://zenn.dev/pinto0309/articles/e1432253d29e30
+
+
+
+#########################################################################################
+
+%userprofile%\AppData\Local\Packages\
+
+WSL-Kernel : https://github.com/microsoft/WSL2-Linux-Kernel
+
+enable wsl kernel driver .config patch : https://github.com/PINTO0309/wsl2_linux_kernel_usbcam_enable_conf
+
+Windows Side usbipd driver : https://github.com/dorssel/usbipd-win
+
+kernel compile instructions :
+
+https://github.com/PINTO0309/wsl2_linux_kernel_usbcam_enable_conf
+
+https://olof-astrand.medium.com/compiling-your-own-wsl2-kernel-4428d5258578
+
+https://github.com/Eemilp/install-opencv-on-wsl
+
+https://github.com/dorssel/usbipd-win/wiki/WSL-support
+
+https://zenn.dev/pinto0309/articles/e1432253d29e30
+
+https://learn.microsoft.com/en-us/community/content/wsl-user-msft-kernel-v6
+
+https://gist.github.com/tatumroaquin/b51d16be877d66de9bd3c1bac94faec9
+
+https://medium.com/@dufresne.danny/usb-webcam-wls2-setup-gvcuview-cheese-opencv-c-b4b5bc43df29
+
+https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/
+
+
+https://superuser.com/questions/1714345/change-of-wsl-installation-location
+
+https://learn.microsoft.com/en-us/windows/wsl/wsl-config
+
+https://dev.to/naruaika/using-opencv-on-windows-subsystem-for-linux-1ako
+
+
+https://developer.ridgerun.com/wiki/index.php/Compiling_OpenCV_from_Source
+
+https://docs.opencv.org/4.10.0/d7/d9f/tutorial_linux_install.html
+
+https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html
+
+https://phoenixnap.com/kb/installing-opencv-on-ubuntu
+
+https://www.geeksforgeeks.org/how-to-install-opencv-in-ubuntu/
+
+
+https://github.com/opencv/opencv
+
+install using pip : https://data-flair.training/blogs/install-opencv-on-ubuntu/
+
+https://zenn.dev/pinto0309/articles/e1432253d29e30
+
+https://askubuntu.com/questions/1384456/usbipd-not-found-for-kernel-when-using-usb-ip-with-wsl
+
+https://stackoverflow.com/questions/72255353/wsl-webcam-usb-can-not-open-camera-by-index
+
+https://stackoverflow.com/questions/65939167/problem-using-opencv-in-wsl-when-opening-windows
+
+####################### Solution to fix OpenCV Pyhton on windows #########################
+
+pip uninstall opencv-python-headless --break-system-packages
+
+pip install opencv-python --upgrade --break-system-packages
+
+pip uninstall opencv-python --break-system-packages
+
+pip install opencv-python --break-system-packages
+
+pip install matplotlib --break-system-packages
+
+And it turned out that opencv-python-headless must be version 4.5.4 for the program to run properly. So the solution was to change the opencv-python version to be the same as opencv-python-headless. So in that case you can run:python-headless. So in that case you can run:
+
+pip install opencv-python==4.5.4.60
+
+#################################################
+
+sudo apt-get purge libopencv-dev libopencv-python libopencv-samples libopencv*
+
+sudo apt-get install build-essential cmake git libgtk-3-* pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev-is-python3
+
+sudo apt-get install gstreamer1.0*
+sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
+sudo apt-get install libgl1-mesa-glx
+sudo apt-get install xdg-utils
+
+
+
